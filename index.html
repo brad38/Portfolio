@@ -9,7 +9,6 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    /* Variáveis do Modo Claro */
     :root {
       --bg: #f5f3ef;
       --ink: #1a1714;
@@ -26,7 +25,6 @@
       --serif: 'DM Serif Display', serif;
     }
 
-    /* Variáveis do Modo Escuro */
     html[data-theme="dark"] {
       --bg: #121212;
       --ink: #e8e8e8;
@@ -42,7 +40,6 @@
 
     html { scroll-behavior: smooth; }
 
-    /* Transição suave para o Dark Mode */
     body, nav, .stat-card, .info-item, .project-card, .skill-tag, .contact-link, section, .publication-badge {
       transition: background-color 0.6s ease, color 0.6s ease, border-color 0.6s ease;
     }
@@ -65,7 +62,6 @@
       opacity: .5;
     }
 
-    /* ---------- NAV ---------- */
     nav {
       position: fixed; top: 0; left: 0; right: 0;
       z-index: 100;
@@ -82,7 +78,6 @@
 
     section { position: relative; z-index: 1; }
 
-    /* ---------- FOTO ELEGANTE (BLOB) ---------- */
     .hero-photo-wrapper { width: 100%; display: flex; justify-content: center; margin-bottom: 1rem; }
     .hero-photo-container {
       width: 280px; height: 280px; overflow: hidden; cursor: pointer;
@@ -102,7 +97,6 @@
       67% { border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%; }
     }
 
-    /* ---------- HERO ---------- */
     #hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 8rem 4rem 5rem; gap: 4rem; }
     .hero-tag { display: inline-block; font-family: var(--mono); font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); padding: .3rem .8rem; border-radius: 2px; margin-bottom: 1.5rem; }
     h1 { font-family: var(--serif); font-size: clamp(3rem, 5vw, 5rem); line-height: 1.08; letter-spacing: -.01em; margin-bottom: 1.5rem; perspective: 1000px; }
@@ -129,7 +123,6 @@
 
     .divider { border: none; border-top: 1px solid var(--line); margin: 0 4rem; }
 
-    /* ---------- SOBRE ---------- */
     #sobre { padding: 6rem 4rem; display: grid; grid-template-columns: 1fr 2fr; gap: 5rem; align-items: start; }
     .section-label { font-family: var(--mono); font-size: .7rem; letter-spacing: .15em; text-transform: uppercase; color: var(--accent); margin-bottom: .8rem; }
     h2 { font-family: var(--serif); font-size: clamp(2rem, 3.5vw, 3rem); line-height: 1.15; margin-bottom: 1.5rem; }
@@ -140,7 +133,6 @@
     .info-key { font-family: var(--mono); font-size: .65rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: .2rem; }
     .info-val { font-size: .92rem; font-weight: 500; }
 
-    /* ---------- PROJETOS ---------- */
     #projetos { padding: 6rem 4rem; background: var(--projetos-bg); color: var(--projetos-text); }
     #projetos .section-label { color: #c8461e; }
     #projetos h2 { color: var(--projetos-text); }
@@ -164,18 +156,15 @@
     .research-tags { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .8rem; }
     .rtag { font-family: var(--mono); font-size: .63rem; letter-spacing: .07em; padding: .25rem .7rem; border-radius: 2px; background: rgba(255,255,255,.05); color: #a09890; border: 1px solid rgba(255,255,255,.1); }
 
-    /* ---- EFEITOS DE CLICK, INFLAR E ROTAÇÃO ---- */
     .click-inflate { cursor: pointer; transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
     .anim-inflate { animation: popScale 0.3s ease; }
     @keyframes popScale { 0% {transform: scale(1);} 50% {transform: scale(1.15);} 100% {transform: scale(1);} }
 
-    /* Giro na vertical (Eixo X) */
     .anim-spin-cw { animation: spinCw 0.6s ease forwards; display: inline-block; }
     @keyframes spinCw { 100% {transform: rotateX(360deg);} }
     .anim-spin-ccw { animation: spinCcw 0.6s ease forwards; display: inline-block; }
     @keyframes spinCcw { 100% {transform: rotateX(-360deg);} }
 
-    /* ---- MINIGAME COMUM ---- */
     .minigame-wrap { background: rgba(0,0,0,.25); border: 1px solid rgba(255,255,255,.08); border-radius: 8px; padding: 1.4rem; display: flex; flex-direction: column; }
     .minigame-title { font-family: var(--mono); font-size: .62rem; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: .8rem; display: flex; justify-content: space-between; }
     .mg-score { color: #e8c84a; }
@@ -187,7 +176,6 @@
     @keyframes shake { 0%, 100% { transform: translateX(0); } 20% { transform: translateX(-5px); } 40% { transform: translateX(5px); } 60% { transform: translateX(-5px); } 80% { transform: translateX(5px); } }
     .shake { animation: shake 0.4s ease-in-out; }
 
-    /* ---- QUIZ ---- */
     .minigame-options { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: .8rem; }
     .mg-opt { font-family: var(--mono); font-size: .72rem; padding: .4rem .9rem; border-radius: 3px; border: 1px solid rgba(255,255,255,.18); background: transparent; color: #d0c8c0; cursor: pointer; transition: all .18s; }
     .mg-opt:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
@@ -199,23 +187,19 @@
     .mg-dot.done { background: #5cc87a; }
     .mg-dot.active { background: var(--accent); }
 
-    /* ---- SISMORCEGO CANVAS ---- */
     #canvas-morcego { width: 100%; height: 130px; border-radius: 6px; display: block; margin-bottom: .8rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); cursor: pointer; }
     .bat-hint { font-family: var(--mono); font-size: .6rem; color: #6a635d; text-align: center; margin-bottom: .6rem; }
 
-    /* ---- FLOWGYM ---- */
     .gym-board { display: flex; align-items: center; justify-content: center; height: 100px; font-size: 3rem; margin-bottom: 1rem; }
     .gym-progress-bg { width: 100%; height: 20px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; margin-bottom: 1rem; }
     .gym-progress-fill { height: 100%; width: 0%; background: #5cc87a; transition: width 0.1s; }
 
-    /* ---- CALCULADORA DE ÁREA ---- */
     .calc-controls { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1rem; }
     .calc-controls label { font-family: var(--mono); font-size: 0.7rem; color: #d0c8c0; }
     .calc-controls input[type=range] { width: 100%; accent-color: var(--accent); }
     .calc-visual-board { width: 100%; height: 140px; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; border-radius: 6px; }
     .calc-box { border: 2px dashed #5cc87a; background: rgba(92,200,122,0.2); transition: width 0.1s, height 0.1s; display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 0.7rem; }
 
-    /* ---- EFEITOS ---- */
     #effects-container { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 9999; overflow: hidden; }
     .particle { position: absolute; font-size: 2rem; animation: fall linear forwards; }
     @keyframes fall { 0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; } 100% { transform: translateY(110vh) rotate(360deg); opacity: 0; } }
@@ -230,7 +214,6 @@
       100% { transform: translate(-50%, -200%) scale(1.5); opacity: 0; } 
     }
 
-    /* ---------- LUA / MODO ESCURO ---------- */
     .moon-fly { 
       position: fixed; 
       top: 0; 
@@ -248,7 +231,6 @@
       100% { transform: translate(calc(50vw - 60px), -30vh) rotate(30deg) scale(0.5); opacity: 0;} 
     }
 
-    /* ---- TECNOLOGIAS ---- */
     #tecnologias { padding: 6rem 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
     .tech-list-title { font-family: var(--mono); font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; margin-top: 2rem; }
     .tech-list-title:first-child { margin-top: 0; }
@@ -257,7 +239,6 @@
     .skill-tag:hover { border-color: var(--accent); color: var(--accent); }
     .tech-right { padding-top: 3rem; }
     
-    /* Efeito de Onda no texto "Tecnologias" */
     #title-tecnologias { display: inline-block; cursor: pointer; user-select: none;}
     .tech-letter { display: inline-block; transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.2s ease; }
     .tech-letter-first { font-size: 1.3em; }
@@ -267,7 +248,6 @@
     .interest-list li:first-child { border-top: 1px solid var(--line); }
     .interest-icon { color: var(--accent); flex-shrink: 0; margin-top: .25rem; display: flex; align-items: center; }
 
-    /* ---------- CONTATO ---------- */
     #contato { padding: 6rem 4rem; background: var(--accent-soft); display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
     .contact-links { display: flex; flex-direction: column; gap: 1rem; }
     .contact-link { display: flex; align-items: center; gap: 1.2rem; padding: 1.2rem 1.5rem; background: var(--card-bg); border: 1px solid var(--line); border-radius: 8px; text-decoration: none; color: var(--ink); transition: all .22s; }
@@ -354,7 +334,7 @@
     <div class="sobre-text reveal" style="transition-delay:.1s">
       <p>Sou <strong>Bradsson Santos</strong>, estudante de <strong>Ciência da Computação</strong> no Instituto Federal do Pará (IFPA), com previsão de conclusão em 2027. Tenho forte interesse em desenvolvimento Full Stack, aplicações mobile e automação de processos.</p>
       <p>Atuo como <strong>pesquisador bolsista CNPq</strong> e me envolvo em múltiplos projetos de tecnologia educacional e saúde pública. Além do <strong>Produzaê</strong> (app educacional voltado ao ensino de redação para alunos do ensino médio), participei do desenvolvimento da produção de artigo do <strong>SisMorcego</strong>, um ecossistema offline-first para vigilância epidemiológica na Amazônia, resultando na publicação de um artigo no evento científico nacional de computação SEMISH 2026.</p>
-      <p>Fora do laboratório, aplico meus conhecimentos no desenvolvimento de sistemas Full Stack, como o <strong>FlowGym</strong>, e outros projetos pessoais nas áreas de desenvolvimento <strong>Android</strong>, interfaces <strong>Web</strong> e outras tecnologias. Meu objetivo é impactar o mercado atuando em uma <strong>Big Tech</strong>, na área pública de TI ou por meio do desenvolvimento de projetos freelancers. Inglês intermediário, focado em leitura técnica.</p>
+      <p>Fora do laboratório, aplico meus conhecimentos no desenvolvimento de sistemas Full Stack, como o <strong>FlowGym</strong>, e outros projetos pessoais nas áreas de desenvolvimento <strong>Android</strong>, interfaces <strong>Web</strong> e outras tecnologias, além de ter experiência com <strong>Adobe Photoshop</strong>. Meu objetivo é impactar o mercado atuando em uma <strong>Big Tech</strong>, na área pública de TI ou por meio do desenvolvimento de projetos freelancers. Inglês intermediário, focado em leitura técnica.</p>
       <div class="info-grid">
         <div class="info-item"><div class="info-key">Formação</div><div class="info-val">Ciência da Computação</div></div>
         <div class="info-item"><div class="info-key">Instituição</div><div class="info-val">IFPA</div></div>
@@ -497,7 +477,7 @@
       <h2 id="title-tecnologias">Tecnologias</h2>
       <div class="tech-list-title">Confortável</div>
       <div class="skills-wrap">
-        <span class="skill-tag">Java</span><span class="skill-tag">Python</span><span class="skill-tag">PostgreSQL</span><span class="skill-tag">SQL</span><span class="skill-tag">HTML</span><span class="skill-tag">CSS</span><span class="skill-tag">JavaScript</span><span class="skill-tag">Git</span><span class="skill-tag">GitHub</span><span class="skill-tag">Android Studio</span><span class="skill-tag">OpenCV</span>
+        <span class="skill-tag">Java</span><span class="skill-tag">Python</span><span class="skill-tag">PostgreSQL</span><span class="skill-tag">SQL</span><span class="skill-tag">HTML</span><span class="skill-tag">CSS</span><span class="skill-tag">JavaScript</span><span class="skill-tag">Git</span><span class="skill-tag">GitHub</span><span class="skill-tag">Android Studio</span><span class="skill-tag">OpenCV</span><span class="skill-tag">Adobe Photoshop</span>
       </div>
       <div class="tech-list-title">Aprendendo</div>
       <div class="skills-wrap">
@@ -521,7 +501,7 @@
           <span><strong>Processamento de imagens</strong> — análise e manipulação com OpenCV.</span>
         </li>
         <li class="click-inflate">
-          <span class="interest-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
+          <span class="interest-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
           <span><strong>Pesquisa aplicada</strong> — tecnologia educacional e publicação científica.</span>
         </li>
       </ul>
@@ -532,7 +512,7 @@
     <div class="reveal">
       <p class="section-label">Contato</p>
       <h2 id="title-contato" style="cursor:pointer; display:inline-block; user-select:none;">Vamos conversar?</h2>
-      <p>Estou aberto a novas oportunidades ou projetos interessantes.</p>
+      <p>Estou aberto a novas oportunidades, colaborações ou projetos interessantes. Pode me chamar por qualquer um dos canais abaixo.</p>
     </div>
     <div class="contact-links reveal" style="transition-delay:.1s">
       <a href="https://github.com/brad38" target="_blank" class="contact-link">
@@ -680,7 +660,7 @@ heroPhotoTrigger.addEventListener('click', () => {
   isDarkMode = !isDarkMode;
   
   const iconSvg = isDarkMode
-    ? `<svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="#cac9ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`
+    ? `<svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="#e8e8e8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`
     : `<svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="#e8c84a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
 
   const themeIcon = document.createElement('div');
@@ -1041,10 +1021,12 @@ loadQ();
 
 // ========== FLOWGYM ==========
 let gymPower = 0, gymReps = 0, gymDrainInterval = null;
+let gymStartTime = 0, gymTimerInterval = null;
 const barGym = document.getElementById('bar-gym');
 const charGym = document.getElementById('char-gym');
 const scoreGym = document.getElementById('score-gym');
 const btnGym = document.getElementById('btn-gym');
+const timeGym = document.getElementById('time-gym');
 
 btnGym.onclick = () => {
   if(gymReps >= 5) {
@@ -1053,7 +1035,15 @@ btnGym.onclick = () => {
     btnGym.textContent = "Esmague para Levantar!";
     charGym.textContent = "🧍";
     barGym.style.width = '0%';
+    timeGym.textContent = "0.0s"; 
     return;
+  }
+  if (gymReps === 0 && gymPower === 0) {
+    gymStartTime = Date.now();
+    gymTimerInterval = setInterval(() => {
+      let elapsed = (Date.now() - gymStartTime) / 1000;
+      timeGym.textContent = elapsed.toFixed(1) + "s";
+    }, 100);
   }
   if(!gymDrainInterval) {
     gymDrainInterval = setInterval(() => {
@@ -1069,6 +1059,8 @@ btnGym.onclick = () => {
     if(gymReps === 5) {
       clearInterval(gymDrainInterval);
       gymDrainInterval = null;
+      clearInterval(gymTimerInterval);
+      gymTimerInterval = null;
       charGym.textContent = "🏆";
       btnGym.textContent = "Birl! Reiniciar";
       triggerEffect('win');
